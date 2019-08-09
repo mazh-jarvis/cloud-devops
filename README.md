@@ -44,12 +44,8 @@ This Java application makes use of a microserver and inversion of control, which
     COPY ./sql_ddl/schema.sql /docker-entrypoint-initdb.d/
 ```
 
-# [TODO] Cloud Architecture Diagram
-- trading app diagram
-  - use draw.io and aws icons (it's in the draw.io library)
-  - include ec2, alb, auto scaling, target group, rds
-  - security groups
-  - label all important ports(e.g. ALB HTTP, ec2 tpc:5000, RDS tcp:5432)
+# Cloud Architecture Diagram
+![](assets/images/cloud_app_arch.png)
 
-# [TODO] AWS EB and Jenkins CI/CD Pipeline Diagram
-- Please refer to Jenkins guide architecture diagram.
+# AWS EB and Jenkins CI/CD Pipeline Diagram
+![](assets/images/aws_eb_jenkins_pipeline.png)
