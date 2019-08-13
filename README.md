@@ -10,14 +10,15 @@ This Java application makes use of a microserver and inversion of control, which
 ![](assets/images/docker_arch.png)
 
 ## Docker files
-  ### trading-app
-   - The Trading App's Docker configuration:
-        1. installs Maven from Docker repository,
-        1. relocates files of interest to meet maven structure,
-        1. compiles and packages the *trader app* project
-        1. installs the minimal version of java development tools
-        1. finally runs the Trader App executable package, that was just produced using Maven
-   ```dockerfile
+### trading-app
+The Trading App's Docker configuration:
+
+1. installs Maven from Docker repository,
+1. relocates files of interest to meet maven structure,
+1. compiles and packages the *trader app* project
+1. installs the minimal version of java development tools
+1. finally runs the Trader App executable package, that was just produced using Maven
+```dockerfile
     # Build image
     FROM maven:3.6-jdk-8-slim AS build
     COPY src /build/src
@@ -30,10 +31,10 @@ This Java application makes use of a microserver and inversion of control, which
     ENTRYPOINT ["java","-jar","/usr/local/app/trading/lib/trading_app.jar"]
 ```
 
-  ### jrvs-psql
-   - The Postgres' Docker configuration:
-        1. installs the appropriate version of Postgres database package
-        1. creates the database schema based on a specified DDL source
+### jrvs-psql
+The Postgres' Docker configuration:
+1. installs the appropriate version of Postgres database package
+1. creates the database schema based on a specified DDL source
   ```dockerfile
     FROM postgres
     COPY ./sql_ddl/schema.sql /docker-entrypoint-initdb.d/
