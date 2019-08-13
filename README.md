@@ -6,13 +6,8 @@ Trading App is a trading microservice application that emulates stock management
 
 This Java application makes use of a microserver and inversion of control, which make the application robust. It also uses a Postgres database(remote database server) to store relevant data.
 
-# [TODO] Docker Architecture Diagram
-- trading_app docker diagram including:
- - use draw.io and AWS icons (it's already in draw.io library)
- - images (docker hub and local)
- - bridge network
- - containers
- - label commands
+# Docker Architecture Diagram
+![](assets/images/docker_arch.png)
 
 ## Docker files
   ### trading-app
